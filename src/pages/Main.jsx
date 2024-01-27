@@ -34,7 +34,7 @@ const getFutureWeather= async(props)=>{
         props.formData1 = props.formData
     }
     try{
-        const res = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=b1d60fc2dd874b87894161306242601&q=${props.formData1},${props.formData2}&days=7`)
+        const res = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=b1d60fc2dd874b87894161306242601&q=${props.formData1},${props.formData2}&days=7`)
         console.log(res)
         return res;
     }
