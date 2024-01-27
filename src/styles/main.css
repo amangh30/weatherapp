@@ -42,7 +42,7 @@ body{
 #box2{
     width: 65vw;
     border-radius: 22px;
-    height: 27vh;
+    height: 30vh;
 }
 
 .main{
@@ -54,8 +54,8 @@ body{
 }
 
 #right{
-    height: 89vh;
-    width: 30vw;
+    height: 95vh;
+    width: 35vw;
     border-radius: 22px;
 }
 
