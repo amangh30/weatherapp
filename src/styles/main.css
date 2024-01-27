@@ -1,0 +1,171 @@
+body{
+    color: white;
+}
+
+.name{
+    font-size: 55px;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 75px;
+    margin-top: 20px;
+}
+
+.rain{
+    margin-left: 75px;
+    margin-top: -7px;
+    color: grey;
+    font-weight: 600;
+}
+
+.temp{
+    font-size: 55px;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 75px;
+    margin-top: 50px;
+}
+
+.text{
+    position: relative;
+    bottom:10px;
+    color: grey;
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+}
+
+#box{
+    width: 65vw;
+    border-radius: 22px;
+    height: 25vh;
+}
+#box2{
+    width: 65vw;
+    border-radius: 22px;
+    height: 27vh;
+}
+
+.main{
+    display:flex;
+    flex-direction: row;
+}
+.right{
+    margin-left: 25px;
+}
+
+#right{
+    height: 89vh;
+    width: 30vw;
+    border-radius: 22px;
+}
+
+.day{
+    position: absolute;
+    width: 200px;
+    left: 50vw;
+    top: 12vh;
+    z-index: -1;
+}
+
+.txt{
+    color: white;
+    font-size: 22px;
+    position: relative;
+    right: 60px;
+    top: 20px;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+hr{
+    border: 1px solid #2e384b;
+}
+
+.heading{
+    margin-top: 7px;
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    right: 100px;
+}
+
+.rightheading{
+    margin-top: 7px;
+    font-size: 18px;
+    position: relative;
+    top: 20px;
+    left: 30vw;
+}
+
+#today{
+    display: flex;
+    flex: row;
+}
+
+.pin{
+   color: grey;
+}
+
+.daily{
+    font-size: 20px;
+    margin: 10px;
+    margin-left: 40px;
+    margin-right: 30px;
+
+}
+
+.righttxt{
+    color: white;
+    font-size: 22px;
+    position: relative;
+    top: 20px;
+    left: 32.7vw;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.seven{
+    margin-left: 90px;
+    margin-top: -0.5px;
+    position: relative;
+    right: 100px;
+}
+
+.sevenp1{
+    display: inline;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.sevenp2{
+    font-size: 16px;
+    margin-left: 350px;
+    position: relative;
+    bottom: 50px;
+    color: white;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.image{
+    display: inline;
+    margin-left: 40px;
+}
+
+.text3{
+    display: inline;
+    color: white;
+    font-size: 16px;
+}
+
+.text4{
+    display: inline;
+    color: grey;
+}
+
+.img1{
+    filter: invert(100%);
+    width: 40px;
+    display: inline;
+}
