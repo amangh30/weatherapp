@@ -2,7 +2,6 @@ body{
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
     background-color: #0a131f;
-    overflow-x: hidden;
 }
 
 @media only screen and (max-width: 767px) {
