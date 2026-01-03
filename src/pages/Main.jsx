@@ -9,10 +9,10 @@ import uv from "../images/sun-alt-svgrepo-com.svg"
 const getWeather = async(props)=>{
     const options = {
       method: 'GET',
-      url: 'https://weatherapi-com.p.rapidapi.com/current.json',
+      url: 'https://weatherapi-com.p.rapidapi.com/v1/current.json',
       params: {q: `${props.formData1},${props.formData2}`},
       headers: {
-        'X-RapidAPI-Key': '63a3e78e63msh574226d117c629bp1a9c4bjsne2cd8dbad2a8',
+        'X-RapidAPI-Key': import.meta.env.VITE_API_NAME,
         'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
       }
     };
