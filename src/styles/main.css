@@ -1,8 +1,8 @@
-body{
+body {
     color: white;
 }
 
-.name{
+.name {
     font-size: 55px;
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
@@ -10,14 +10,14 @@ body{
     margin-top: 20px;
 }
 
-.rain{
+.rain {
     margin-left: 75px;
     margin-top: -7px;
     color: grey;
     font-weight: 600;
 }
 
-.temp{
+.temp {
     font-size: 55px;
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
@@ -25,41 +25,43 @@ body{
     margin-top: 50px;
 }
 
-.text{
+.text {
     position: relative;
-    bottom:10px;
+    bottom: 10px;
     color: grey;
     font-weight: 700;
     font-size: 12px;
     display: flex;
 }
 
-#box{
+#box {
     width: 65vw;
     border-radius: 22px;
     height: 25vh;
 }
-#box2{
+
+#box2 {
     width: 65vw;
     border-radius: 22px;
     height: 30vh;
 }
 
-.main{
-    display:flex;
+.main {
+    display: flex;
     flex-direction: row;
 }
-.right{
+
+.right {
     margin-left: 25px;
 }
 
-#right{
+#right {
     height: 95vh;
     width: 35vw;
     border-radius: 22px;
 }
 
-.day{
+.day {
     position: absolute;
     width: 200px;
     left: 50vw;
@@ -67,46 +69,54 @@ body{
     z-index: -1;
 }
 
-.txt{
-    color: white;
-    font-size: 22px;
-    position: relative;
-    right: 60px;
-    top: 20px;
-    font-family: 'Alexandria', sans-serif;
-    font-family: 'Rubik', sans-serif;
+.air-conditions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10px;
 }
 
-hr{
+.air-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.air-label {
+    color: grey;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.air-value {
+    color: white;
+    font-size: 22px;
+    font-family: 'Alexandria', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    margin-left: 35px;
+}
+
+hr {
     border: 1px solid #2e384b;
 }
 
-.heading{
-    margin-top: 7px;
-    font-size: 18px;
-    position: relative;
-    top: 20px;
-    right: 100px;
-}
 
-.rightheading{
-    margin-top: 7px;
-    font-size: 18px;
-    position: relative;
-    top: 20px;
-    left: 30vw;
-}
 
-#today{
+
+
+#today {
     display: flex;
     flex: row;
 }
 
-.pin{
-   color: grey;
+.pin {
+    color: grey;
 }
 
-.daily{
+.daily {
     font-size: 1rem;
     margin: 10px;
     margin-left: 40px;
@@ -114,58 +124,55 @@ hr{
 
 }
 
-.righttxt{
-    color: white;
-    font-size: 22px;
-    position: relative;
-    top: 20px;
-    left: 32.7vw;
-    font-family: 'Alexandria', sans-serif;
-    font-family: 'Rubik', sans-serif;
+
+
+.seven {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #2e384b;
 }
 
-.seven{
-    margin-left: 90px;
-    margin-top: -0.5px;
-    position: relative;
-    right: 100px;
+.seven:last-child {
+    border-bottom: none;
 }
 
-.sevenp1{
-    display: inline;
+.sevenp1 {
     font-size: 16px;
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
+    width: 100px;
 }
 
-.sevenp2{
+.sevenp2 {
     font-size: 16px;
-    margin-left: 350px;
-    position: relative;
-    bottom: 50px;
     color: white;
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.image{
-    display: inline;
-    margin-left: 40px;
+.image {
+    width: 40px;
+    height: 40px;
 }
 
-.text3{
-    display: inline;
+.text3 {
     color: white;
     font-size: 16px;
+    flex: 1;
+    text-align: center;
 }
 
-.text4{
-    display: inline;
+.text4 {
     color: grey;
 }
 
-.img1{
+.img1 {
     filter: invert(100%);
-    width: 40px;
+    width: 25px;
     display: inline;
 }

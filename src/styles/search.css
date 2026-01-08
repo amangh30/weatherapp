@@ -1,9 +1,9 @@
-form{
-    width:65vw;
+form {
+    width: 65vw;
     margin-left: 25px;
 }
 
-.dropdown{
+.dropdown {
     border-radius: 22px;
     padding: 5px;
     width: 62vw;
@@ -13,12 +13,11 @@ form{
     cursor: pointer;
 }
 
-.dropdown-row{
+.dropdown-row {
     padding: 5px;
     background-color: #384454;
 }
-.dropdown-row:hover{
+
+.dropdown-row:hover {
     background-color: rgb(74, 87, 107);
 }
-
-

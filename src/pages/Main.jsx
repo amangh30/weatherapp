@@ -6,12 +6,14 @@ import hm from "../images/humidity-svgrepo-com.svg";
 import wind from "../images/wind-svgrepo-com.svg";
 import uv from "../images/sun-alt-svgrepo-com.svg";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const getWeather = async (props) => {
   const options = {
     method: "GET",
-    url: "http://api.weatherapi.com/v1/current.json", // Remove the trailing slash here
+    url: "https://api.weatherapi.com/v1/current.json",
     params: {
-      key: "",
+      key: API_KEY,
       q: `${props.formData1},${props.formData2}`,
     },
   };
@@ -46,7 +48,7 @@ const getFutureWeather = async (props) => {
 
   try {
     const res = await axios.get(
-      `https://api.weatherapi.com/v1/forecast.json?key=b1d60fc2dd874b87894161306242601&q=${props.formData1},${props.formData2}&days=7`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${props.formData1},${props.formData2}&days=7`
     );
     return res.data;
   } catch (e) {
@@ -80,7 +82,7 @@ const Main = ({ props }) => {
   }, [props.formData, props.formData1]);
 
   // Extract forecast data early to avoid repeated optional chaining in JSX
-  const forecastData = cast?.data?.forecast?.forecastday || [];
+  const forecastData = cast?.forecast?.forecastday || [];
   const currentWeather = wthr?.current || {};
 
   return (
@@ -112,22 +114,47 @@ const Main = ({ props }) => {
         >
           <div className="text">TODAY'S FORECAST</div>
           <div id="today">
-            {forecastData[0]?.hour?.map((hour, index) => (
-              <div key={index}>
-                <div className="daily">
-                  <p className="pin">{`${index * 3 + 6}:00 ${
-                    index % 2 === 0 ? "AM" : "PM"
-                  }`}</p>
-                  <img className="img2" src={hour?.condition?.icon} alt="" />
-                  <p style={{ position: "relative", left: "10px" }}>
-                    {hour?.temp_c}
-                  </p>
-                </div>
-                {index !== forecastData[0]?.hour.length - 1 && (
-                  <div style={{ border: "1px solid #2e384b" }} />
-                )}
-              </div>
-            ))}
+            {(() => {
+              const todayHours = forecastData[0]?.hour || [];
+              const tomorrowHours = forecastData[1]?.hour || [];
+
+              // Select specific hours: 6, 9, 12, 15, 18, 21 from today
+              const selectedIndices = [6, 9, 12, 15, 18, 21];
+              const displayHours = selectedIndices.map(i => todayHours[i]).filter(Boolean);
+
+              // Add 00:00 from tomorrow
+              if (tomorrowHours[0]) {
+                displayHours.push(tomorrowHours[0]);
+              }
+
+              return displayHours.map((hour, index) => {
+                // Format time
+                const date = new Date(hour.time);
+                let hours = date.getHours();
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                hours = hours % 12;
+                hours = hours ? hours : 12; // the hour '0' should be '12'
+                const strTime = hours + ':00 ' + ampm;
+
+                // Special case for 00:00 (which is the last item from tomorrow)
+                const displayTime = (index === displayHours.length - 1 && hour === tomorrowHours[0]) ? "00:00 AM" : strTime;
+
+                return (
+                  <div key={index}>
+                    <div className="daily">
+                      <p className="pin">{displayTime}</p>
+                      <img className="img2" src={hour?.condition?.icon} alt="" />
+                      <p style={{ position: "relative", left: "10px" }}>
+                        {hour?.temp_c}
+                      </p>
+                    </div>
+                    {index !== displayHours.length - 1 && (
+                      <div style={{ border: "1px solid #2e384b" }} />
+                    )}
+                  </div>
+                );
+              });
+            })()}
           </div>
         </a>
 
@@ -137,25 +164,31 @@ const Main = ({ props }) => {
           id="box2"
         >
           <div className="text">AIR CONDITIONS</div>
-          <div>
-            <div className="heading">
-              <img className="img1" src={temperature} alt="" />Real Feel
+          <div className="air-conditions-grid">
+            <div className="air-item">
+              <div className="air-label">
+                <img className="img1" src={temperature} alt="" /> Real Feel
+              </div>
+              <div className="air-value">{currentWeather?.feelslike_c}°</div>
             </div>
-            <div className="txt">{currentWeather?.feelslike_c}°</div>
-            <div className="heading">
-              <img className="img1" src={hm} alt="" />Humidity
+            <div className="air-item">
+              <div className="air-label">
+                <img className="img1" src={hm} alt="" /> Humidity
+              </div>
+              <div className="air-value">{currentWeather?.humidity}%</div>
             </div>
-            <div className="txt">{currentWeather?.humidity}%</div>
-          </div>
-          <div>
-            <div className="rightheading">
-              <img className="img1" src={wind} alt="" />Wind
+            <div className="air-item">
+              <div className="air-label">
+                <img className="img1" src={wind} alt="" /> Wind
+              </div>
+              <div className="air-value">{currentWeather?.wind_kph} km/h</div>
             </div>
-            <div className="righttxt">{currentWeather?.wind_kph}km/h</div>
-            <div className="rightheading">
-              <img className="img1" src={uv} alt="" />UV Index
+            <div className="air-item">
+              <div className="air-label">
+                <img className="img1" src={uv} alt="" /> UV Index
+              </div>
+              <div className="air-value">{currentWeather?.uv}</div>
             </div>
-            <div className="righttxt">{currentWeather?.uv}</div>
           </div>
         </a>
       </div>
