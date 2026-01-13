@@ -11,6 +11,8 @@ form {
     top: 70px;
     left: 28px;
     cursor: pointer;
+    z-index: 10;
+    /* Ensure dropdown is on top */
 }
 
 .dropdown-row {
@@ -20,4 +22,16 @@ form {
 
 .dropdown-row:hover {
     background-color: rgb(74, 87, 107);
+}
+
+@media (max-width: 1000px) {
+    form {
+        width: 90vw;
+        margin-left: 20px;
+    }
+
+    .dropdown {
+        width: 85vw;
+        left: 25px;
+    }
 }

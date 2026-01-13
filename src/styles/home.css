@@ -1,28 +1,5 @@
-body{
+body {
     font-family: 'Alexandria', sans-serif;
     font-family: 'Rubik', sans-serif;
     background-color: #0a131f;
 }
-
-@media only screen and (max-width: 767px) {
-   .pc{
-        display:none;
-   }
-   .phone{
-        display: block;
-        width: 100vw;
-        text-align: center;        
-        font-size: 18px;
-        position: relative;
-        top: 45vh;
-        font-family: 'Alexandria', sans-serif;
-        font-family: 'Rubik', sans-serif;
-   }
-}
-
-@media (min-width:1025px){
-    .phone{
-        display: none;
-    }
-}
-

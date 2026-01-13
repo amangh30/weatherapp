@@ -176,3 +176,69 @@ hr {
     width: 25px;
     display: inline;
 }
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name,
+    .rain,
+    .temp {
+        margin-left: 20px;
+    }
+
+    .name {
+        font-size: 40px;
+    }
+
+    .temp {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    .day {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 150px;
+        margin-left: 20px;
+    }
+
+    #box,
+    #box2 {
+        width: 90vw;
+        height: auto;
+        margin-left: 0 !important;
+        /* Override inline style or previous css */
+        margin-bottom: 20px;
+    }
+
+    #box {
+        overflow-x: auto;
+        /* Allow scrolling for hourly forecast */
+    }
+
+    #today {
+        width: max-content;
+        /* Ensure content stretches for scrolling */
+        padding-bottom: 10px;
+    }
+
+    .right {
+        margin-left: 0;
+        width: 90vw;
+    }
+
+    #right {
+        width: 100%;
+        height: auto;
+        margin-left: 0 !important;
+    }
+
+    .air-conditions-grid {
+        grid-template-columns: 1fr;
+    }
+}
