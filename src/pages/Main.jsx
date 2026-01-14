@@ -48,7 +48,7 @@ const getFutureWeather = async (props) => {
 
   try {
     const res = await axios.get(
-      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${props.formData1},${props.formData2}&days=7`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${props.formData1},${props.formData2}&days=3`
     );
     return res.data;
   } catch (e) {
@@ -200,7 +200,7 @@ const Main = ({ props }) => {
           id="right"
         >
           <div className="text" style={{ display: "inline" }}>
-            7-DAY FORECAST
+            3-DAY FORECAST
             <div style={{ display: "flex", flexDirection: "column" }}>
               {forecastData.map((day, index) => (
                 <div key={index} className="seven">

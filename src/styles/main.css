@@ -56,7 +56,7 @@ body {
 }
 
 #right {
-    height: 95vh;
+    height: auto;
     width: 35vw;
     border-radius: 22px;
 }
